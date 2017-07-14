@@ -202,8 +202,8 @@ class InstaBot:
         self.write_log(log_string)
         self.login()
         self.populate_user_blacklist()
-        signal.signal(signal.SIGTERM, self.cleanup)
-        atexit.register(self.cleanup)
+        # signal.signal(signal.SIGTERM, self.cleanup)
+        # atexit.register(self.cleanup)
 
     def populate_user_blacklist(self):
         for user in self.user_blacklist:
@@ -638,6 +638,7 @@ class InstaBot:
             comment_text = self.generate_comment()
             log_string = "Trying to comment: %s" % (self.media_by_tag[0]['id'])
             self.write_log(log_string)
+            print("Comment Sukses")
             if self.comment(self.media_by_tag[0]['id'], comment_text) != False:
                 self.next_iteration["Comments"] = time.time() + \
                                                   self.add_time(self.comments_delay)
