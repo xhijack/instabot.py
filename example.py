@@ -154,15 +154,16 @@ if __name__ == '__main__':
 
     elif mode == 6:
         print("Masuk mode 6")
-        # users = ['addavii', 'marwashania', '000studio']
-        # while len(users) > 0:
-        for bot in bots:
-            print("BOT :", bot.user_id)
-            # bot.follow(users.pop())
-            bot.run()
-        s = random.randint(30,60)
-        time.sleep(s)
-        print("Waktunya tidur % detik" % s)
+        while True:
+            # users = ['addavii', 'marwashania', '000studio']
+            # while len(users) > 0:
+            for bot in bots:
+                print("BOT :", bot.user_id)
+                # bot.follow(users.pop())
+                bot.run()
+            s = random.randint(300,600)
+            time.sleep(s)
+            print("Waktunya tidur % detik" % s)
 
     else:
         print("Wrong mode!")
